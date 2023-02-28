@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart - Get your things</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="img/Logo01.png" width="150px"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
+                    <li><a href="product.html"><i class="fa fa-shopping-cart"></i>Products</a></li>
+                    <li><a href="aboutus.html"><i class="fa fa-user"></i>About Us</a></li>
+                    <li><a href="account.html"><i class="fa fa-user-plus"></i>Account</a></li>
+                    <li><a href="contact.html"><i class="fa fa-phone"></i>Contact</a></li>
+                </ul>
+            </nav>
+            <a href="cart.html"><img src="img/cart.png" width="30px" height="30px"></a>
+        </div>
+    </div>
+
+    <!------------Account Page----------->
+    <div class="container">
+        <div class="form-box">
+            <div class="form-btn">
+                <span onclick="login()">Login</span>
+                <span onclick="register()">Register</span>
+                <hr id="Indicator">
+            </div>
+            <form id="LoginForm">
+                <input type="text" placeholder="Username">
+                <input type="password" placeholder="Password">
+                <button type="submit" class="btn">Login</button>
+                <a href="">Forgot password</a>
+            </form>
+            <form id="RegForm" onsubmit="getRegData();">
+                <input type="text" placeholder="Username" id="username">
+                <input type="email" placeholder="Email" id="email">
+                <input type="password" placeholder="Create Password" id="password">
+                <button type="submit" class="btn">Register</button>
+            </form>
+            <!----
+            <script type="module">
+                import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
+                import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-analytics.js";
+
+                const firebaseConfig = {
+                    apiKey: "AIzaSyA_NCmBCBZOlmOZ-oaJTBIqt1tRV9-PYMg",
+                    authDomain: "e-commercial-ffcd2.firebaseapp.com",
+                    projectId: "e-commercial-ffcd2",
+                    storageBucket: "e-commercial-ffcd2.appspot.com",
+                    messagingSenderId: "225065478525",
+                    appId: "1:225065478525:web:bf248e9515a3ca2737c414",
+                    measurementId: "G-29BCC4V3N6"
+                };
+
+                const app = initializeApp(firebaseConfig);
+                const analytics = getAnalytics(app);
+
+                function getRegData() {
+                    username = document.getElementById('username').value;
+                    email = document.getElementById('email').value;
+                    password = document.getElementById('password').value;
+                    register(email, password);
+                }
+
+                function register(email, password) {
+                    firebase.auth().createUserWithEmailAndPassword(email, password)
+                        .then((userCredential) => {
+                            console.log('login successfull');
+                        })
+                        .catch((error) => {
+                            console.log('login failed');
+                        });
+                }
+
+            </script>-->
+        </div>
+    </div>
+
+    <!------------Footer---------->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download Our App</h3>
+                    <p>Download App for Android and ios mobile phones.</p>
+                    <div class="app-logo">
+                        <img src="img/playstorelogo.png">
+                        <img src="img/appstorelogo.png">
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <img src="img/Logo01.png">
+                    <p>Our purpose is to sustainably make the pleasure<br>
+                        benifits of sports accessible to the many.</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>Coupon</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>LinkedIn</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">Copyright 2022 - Rishav Mishra</p>
+        </div>
+    </div>
+
+    <!-----------Js for toggle form----------->
+    <script>
+        var LoginForm = document.getElementById("LoginForm");
+        var RegForm = document.getElementById("RegForm");
+        var Indicator = document.getElementById("Indicator");
+
+        function register() {
+            RegForm.style.transform = "translateX(0px)";
+            LoginForm.style.transform = "translateX(0px)";
+            Indicator.style.transform = "translateX(100px)";
+        }
+        function login() {
+            RegForm.style.transform = "translateX(300px)";
+            LoginForm.style.transform = "translateX(300px)";
+            Indicator.style.transform = "translateX(0px)";
+        }
+    </script>
+
+    <!-- <script src="https://smtpjs.com/v3/smtp.js"></script> -->
+    <!-- <script>
+        function sendmail() {
+            Email.send({
+                Host: "smtp.yourisp.com",
+                Username: "rishavmishra2051@gmail.com",
+                Password: "rm010702",
+                To: 'rishavmishra2051@gmail.com',
+                From: document.getElementById("email").value,
+                Subject: "New Contact Form",
+                Body: "Name: " + document.getElementById("name").value
+                    + "<br> Email: " + document.getElementById("email").value
+                    + "<br> Phone no.: " + document.getElementById("phone").value
+                    + "<br> Message: " + document.getElementById("message").value
+            }).then(
+                message => alert("You are registered")
+            );
+        }
+    </script> -->
+
+</body>
+</html>
